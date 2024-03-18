@@ -1,9 +1,17 @@
+import ProductCard from "@/components/ProductCard";
+
 export default async function Home() {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {data[0].title}
+    <main className="sm:p-16 py-16 px-8 flex flex-col gap-10">
+      <h2 className="text-3xl text-white font-bold">Explore Products</h2>
+
+      <section className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+        {data.map((item, index) => (
+          <ProductCard product={item} key={index} />
+        ))}
+      </section>
     </main>
   );
 }
