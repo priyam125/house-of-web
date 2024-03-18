@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { MotionDiv } from "./MotionSection";
+import Link from "next/link";
 
 function ProductCard({ product, index }) {
   console.log(product);
@@ -15,8 +20,8 @@ function ProductCard({ product, index }) {
       </div>
       <div className="py-4 flex flex-col gap-3">
         <div className="flex justify-between items-center gap-4">
-          <h2 className="font-bold text-white line-clamp-1 w-full">
-            {product.title}
+          <h2 className="font-bold text-white line-clamp-1 w-full cursor-pointer">
+            <Link href={`/${product.id}`}>{product.title}</Link>
           </h2>
           <div className="py-1 px-2 bg-[#161921] rounded-sm">
             <p className="text-white text-xs font-bold capitalize">
