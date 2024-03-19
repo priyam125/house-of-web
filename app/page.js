@@ -11,7 +11,7 @@ export default async function Home() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2, // Adjust this value to control the stagger delay
+        staggerChildren: 0.2,
       },
     },
   };
