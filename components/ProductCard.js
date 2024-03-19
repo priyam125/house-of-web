@@ -2,13 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MotionDiv } from "./MotionSection";
 import Link from "next/link";
+import { MotionDiv } from "./MotionDiv";
 
 function ProductCard({ product, index }) {
   console.log(product);
   return (
-    <div className="max-w-sm rounded relative w-full">
+    <MotionDiv
+      whileHover={{ scale: 1.15 }}
+      transition={{ ease: "easeInOut" }}
+      className="max-w-sm rounded relative w-full"
+    >
       <div className="relative w-full h-[37vh]">
         <Image
           key={index}
@@ -20,13 +24,12 @@ function ProductCard({ product, index }) {
       </div>
       <div className="py-4 flex flex-col gap-3">
         <div className="flex justify-between items-center gap-4">
-          <h2 className="font-bold text-white line-clamp-1 w-full cursor-pointer">
+          <p className="font-bold text-white line-clamp-1 w-full cursor-pointer">
             <Link href={`/${product.id}`}>{product.title}</Link>
-          </h2>
+          </p>
           <div className="py-1 px-2 bg-[#161921] rounded-sm">
             <p className="text-white text-xs font-bold capitalize">
               {product.category}
-              {/* {product.rating.count} */}
             </p>
           </div>
         </div>
@@ -35,7 +38,7 @@ function ProductCard({ product, index }) {
             <Image
               src="./dollar-sign.svg"
               alt="episodes"
-              width={20}
+              width={16}
               height={20}
               className="object-contain"
             />
@@ -55,7 +58,7 @@ function ProductCard({ product, index }) {
           </div>
         </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 }
 
