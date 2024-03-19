@@ -13,7 +13,7 @@ function ProductCard({ product, index }) {
       transition={{ ease: "easeInOut" }}
       className="max-w-sm rounded relative w-full cursor-pointer shadow-2xl flex md:flex-col gap-4 md:gap-0"
     >
-      <div className="relative w-full h-[30vh] max-w-[10rem]  md:max-w-full">
+      <div className="relative w-full h-[30vh] max-w-[8rem] min-w-[8rem] md:max-w-full">
         <Image
           key={index}
           src={product.image}
