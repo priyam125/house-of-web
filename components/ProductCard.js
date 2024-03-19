@@ -9,26 +9,29 @@ function ProductCard({ product, index }) {
   console.log(product);
   return (
     <MotionDiv
-      whileHover={{ scale: 1.15 }}
+      whileHover={{ scale: 1.2 }}
       transition={{ ease: "easeInOut" }}
-      className="max-w-sm rounded relative w-full"
+      className="max-w-sm rounded relative w-full cursor-pointer shadow-2xl flex md:flex-col gap-4 md:gap-0"
     >
-      <div className="relative w-full h-[37vh]">
+      <div className="relative w-full h-[30vh] max-w-[10rem]  md:max-w-full">
         <Image
           key={index}
           src={product.image}
           alt={product.title}
           fill
+          sizes="(min-width: 768px) 100vw, 33vw"
           className="rounded-xl"
+          priority
+          objectFit="fill"
         />
       </div>
-      <div className="py-4 flex flex-col gap-3">
-        <div className="flex justify-between items-center gap-4">
-          <p className="font-bold text-white line-clamp-1 w-full cursor-pointer">
+      <div className="md:py-4 flex flex-col gap-1">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-bold text-white line-clamp-1 w-full cursor-pointer text-sm">
             <Link href={`/${product.id}`}>{product.title}</Link>
           </p>
-          <div className="py-1 px-2 bg-[#161921] rounded-sm">
-            <p className="text-white text-xs font-bold capitalize">
+          <div className="py-1 px-2 bg-[#161921] rounded-sm hidden md:block">
+            <p className="text-white text-xs font-bold capitalize line-clamp-1">
               {product.category}
             </p>
           </div>
@@ -39,7 +42,7 @@ function ProductCard({ product, index }) {
               src="./dollar-sign.svg"
               alt="episodes"
               width={16}
-              height={20}
+              height={16}
               className="object-contain"
             />
             <p className="text-base text-white font-bold">{product.price}</p>
