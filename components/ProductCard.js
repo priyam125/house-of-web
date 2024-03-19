@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { MotionDiv } from "./MotionDiv";
+import { MotionDiv } from "./MotionElements/MotionDiv";
 
 function ProductCard({ product, index }) {
   console.log(product);

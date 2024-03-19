@@ -1,6 +1,6 @@
-import { MotionDiv } from "@/components/MotionDiv";
-import { MotionH3 } from "@/components/MotionH3";
-import { MotionP } from "@/components/MotionP";
+import { MotionDiv } from "@/components/MotionElements/MotionDiv";
+import { MotionH3 } from "@/components/MotionElements/MotionH3";
+import { MotionP } from "@/components/MotionElements/MotionP";
 import Image from "next/image";
 
 export default async function ProductDetails({ params }) {
@@ -89,7 +89,6 @@ export default async function ProductDetails({ params }) {
           <div className="py-1 px-2 bg-[#161921] rounded-sm">
             <p className="text-white text-xs font-bold capitalize">
               {product.category}
-              {/* {product.rating.count} */}
             </p>
           </div>
         </MotionDiv>

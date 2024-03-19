@@ -1,6 +1,7 @@
 "use client";
 
-import { MotionDiv } from "@/components/MotionDiv";
+import { MotionDiv } from "@/components/MotionElements/MotionDiv";
+
 
 export default function Template({ children }) {
   return (
