@@ -19,7 +19,7 @@ function ProductCard({ product, index }) {
           alt={product.title}
           fill
           sizes="(min-width: 768px) 100vw, 33vw"
-          className="rounded-xl"
+          className="rounded-t-xl"
           priority
           objectFit="fill"
         />
