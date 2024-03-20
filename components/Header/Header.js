@@ -5,7 +5,6 @@ import logoImg from "@/public/logo.svg";
 import CartIcon from "@/public/cart-icon.svg";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
-import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "@/app/(context)/CartContext";
 
