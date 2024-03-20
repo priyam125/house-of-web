@@ -95,7 +95,7 @@ export default function DetailsContainer({ product }) {
 
       <MotionP variants={descriptionVariants}>{product.description}</MotionP>
       {addedToCart ? (
-        <button className="bg-[#5341df] w-40 p-2 rounded-full">
+        <button className="bg-[#5341df] text-gray-900 w-40 p-2 rounded-full">
           Added to Cart
         </button>
       ) : (
