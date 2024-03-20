@@ -1,6 +1,6 @@
 import { MotionDiv } from "../MotionElements/MotionDiv";
 import { MotionSection } from "../MotionElements/MotionSection";
-import ProductCard from "../ProductCard";
+import ProductCard from "./ProductCard";
 
 export default async function ProductList() {
   const res = await fetch("https://fakestoreapi.com/products");

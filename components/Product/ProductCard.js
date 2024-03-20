@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MotionDiv } from "./MotionElements/MotionDiv";
+import { MotionDiv } from "../MotionElements/MotionDiv";
 
 function ProductCard({ product, index }) {
   console.log(product);
