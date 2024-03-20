@@ -95,9 +95,16 @@ export default function DetailsContainer({ product }) {
 
       <MotionP variants={descriptionVariants}>{product.description}</MotionP>
       {addedToCart ? (
-        <button>Added to Cart</button>
+        <button className="bg-[#5341df] w-40 p-2 rounded-full">
+          Added to Cart
+        </button>
       ) : (
-        <button onClick={addToCart}>Add to Cart</button>
+        <button
+          className="w-40 p-2 rounded-full border border-[#5341df] hover:bg-[#5341df]"
+          onClick={addToCart}
+        >
+          Add to Cart
+        </button>
       )}
     </MotionDiv>
   );
