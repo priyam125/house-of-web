@@ -4,34 +4,24 @@ import Image from "next/image";
 import { MotionDiv } from "../MotionElements/MotionDiv";
 import { MotionH3 } from "../MotionElements/MotionH3";
 import { MotionP } from "../MotionElements/MotionP";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "@/app/(context)/CartContext";
 
 export default function DetailsContainer({ product }) {
-  const [cart, setCart] = useState(() => {
-    // Retrieve cart from local storage or initialize an empty array
-    const savedCart = localStorage.getItem("cart");
-    return savedCart ? JSON.parse(savedCart) : [];
-  });
-
   const [addedToCart, setAddedToCart] = useState(false);
-  useEffect(() => {
-    const isProductInCart = cart.some((item) => item.id === product.id);
-    setAddedToCart(isProductInCart);
-  }, [cart, product]);
+  const { cart, setCart } = useContext(CartContext);
 
   const addToCart = () => {
-    // Add the current product to the cart
     setCart([...cart, product]);
 
-    // Save the updated cart to local storage
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
     setAddedToCart(true);
   };
+
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2, // Adjust this value to control the stagger delay
+        staggerChildren: 0.2,
       },
     },
   };

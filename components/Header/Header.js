@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import logoImg from "@/public/logo.svg";
 import CartIcon from "@/public/cart-icon.svg";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "@/app/(context)/CartContext";
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -10,7 +15,9 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-export default function mainHeader() {
+export default function MainHeader() {
+  const { cart } = useContext(CartContext);
+
   return (
     <>
       <header
@@ -33,7 +40,9 @@ export default function mainHeader() {
 
         <div className="flex relative cursor-pointer">
           <Image alt="cart" src={CartIcon} width={25} height={25} />
-          <span className="absolute font-bold top-3 -right-1 z-10 text-[#e5fa78] text-sm">0</span>
+          <span className="absolute font-bold top-3 -right-1 z-10 text-[#e5fa78] text-sm">
+            {cart.length}
+          </span>
         </div>
       </header>
     </>

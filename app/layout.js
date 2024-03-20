@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import MainHeader from "@/components/Header/Header";
+import { CartProvider } from "./(context)/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +12,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <MainHeader />
-        <main className="max-w-[84rem] mx-auto bg-[#0F1117]">{children}</main>
-      </body>
-    </html>
+    <CartProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <MainHeader />
+          <main className="max-w-[84rem] mx-auto bg-[#0F1117]">{children}</main>
+        </body>
+      </html>
+    </CartProvider>
   );
 }

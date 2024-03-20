@@ -5,7 +5,6 @@ import Link from "next/link";
 import { MotionDiv } from "../MotionElements/MotionDiv";
 
 function ProductCard({ product, index }) {
-  console.log(product);
   return (
     <MotionDiv
       whileHover={{ scale: 1.2 }}
