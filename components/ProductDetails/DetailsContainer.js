@@ -11,6 +11,13 @@ export default function DetailsContainer({ product }) {
   const [addedToCart, setAddedToCart] = useState(false);
   const { cart, setCart } = useContext(CartContext);
 
+  // Check if product is already in cart
+  useEffect(() => {
+    const found = cart.some((item) => item.id === product.id);
+    console.log("found", found);
+    setAddedToCart(found);
+  }, [cart, product.id]);
+
   const addToCart = () => {
     setCart([...cart, product]);
 
