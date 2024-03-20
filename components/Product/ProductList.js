@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MotionDiv } from "../MotionElements/MotionDiv";
 import { MotionSection } from "../MotionElements/MotionSection";
 import ProductCard from "./ProductCard";
@@ -29,7 +30,9 @@ export default async function ProductList() {
     >
       {data.map((item, index) => (
         <MotionDiv key={index} variants={itemVariants}>
-          <ProductCard product={item} />
+          <Link href={`/${item.id}`}>
+            <ProductCard product={item} />
+          </Link>
         </MotionDiv>
       ))}
     </MotionSection>

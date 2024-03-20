@@ -24,7 +24,7 @@ function ProductCard({ product, index }) {
       <div className="md:py-4 flex flex-col gap-1">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-bold text-white line-clamp-1 w-full cursor-pointer text-sm">
-            <Link href={`/${product.id}`}>{product.title}</Link>
+            {product.title}
           </p>
           <div className="py-1 px-2 bg-[#161921] rounded-sm hidden md:block">
             <p className="text-white text-xs font-bold capitalize line-clamp-1">
